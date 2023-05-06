@@ -24,6 +24,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   final blocTest = BlocTest();
+  int counter = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -53,7 +54,8 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             ElevatedButton(
               onPressed: () {
-                blocTest.dataSink.add('click button');
+                counter++;
+                blocTest.dataSink.add('$counter');
               },
               child: const Text('click me'),
             )
